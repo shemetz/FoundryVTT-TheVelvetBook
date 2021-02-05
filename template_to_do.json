@@ -1,0 +1,104 @@
+{
+  "Actor": {
+    "types": ["character", "shadow", "npc"],
+    "templates": {
+      "common": {
+        "favoriteThing": "",
+        "arcana": ""
+      },
+      "human": {
+        "stats": {
+          "diligence": {
+            "value": 0,
+            "shock": 0,
+            "scars": 0
+          },
+          "guts": {
+            "value": 0,
+            "shock": 0,
+            "scars": 0
+          },
+          "proficiency": {
+            "value": 0,
+            "shock": 0,
+            "scars": 0
+          },
+          "knowledge": {
+            "value": 0,
+            "shock": 0,
+            "scars": 0
+          },
+          "expression": {
+            "value": 0,
+            "shock": 0,
+            "scars": 0
+          }
+        },
+        "skills": {
+          "No Skill": 0
+        }
+      },
+      "persona": {
+        "details": {
+          "fullName": "",
+          "personality": "",
+          "appearance": "",
+          "usefuls": "",
+          "fullImage": ""
+        },
+        "diceEarned": 0,
+        "diceBought": 0,
+        "resistances": [],
+        "weaknesses": []
+      }
+    },
+    "character": {
+      "templates": ["common", "human", "persona"],
+      "details": {
+        "fullName": "",
+        "gender": "",
+        "dateOfBirth": "",
+        "schoolGrade": "",
+        "personality": "",
+        "appearance": "",
+        "guardians": "",
+        "quote": "",
+        "fullImage": ""
+      },
+      "exp": 0
+    },
+    "shadow": {
+      "templates": ["common", "persona"],
+      "brains": 0
+    },
+    "npc": {
+      "templates": ["common", "human"]
+    }
+  },
+  "Item": {
+    "types": ["part", "extra", "weapon", "relationship", "misc"],
+    "templates": {
+      "hasDescription": {
+        "description": ""
+      }
+    },
+    "part": {
+      "templates": ["hasDescription"]
+    },
+    "extra": {
+      "templates": ["hasDescription"]
+    },
+    "weapon": {
+      "templates": ["hasDescription"]
+    },
+    "relationship": {
+      "templates": ["hasDescription"],
+      "arcana": "Fool",
+      "rank": 1,
+      "shock": 0
+    },
+    "misc": {
+      "templates": ["hasDescription"]
+    }
+  }
+}
