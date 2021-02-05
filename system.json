@@ -7,8 +7,8 @@
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 2,
   "author": "shemetz",
-  "esmodules": ["module/boilerplate.js"],
-  "styles": ["css/boilerplate.css"],
+  "esmodules": ["module/tvb.js"],
+  "styles": ["css/tvb.css"],
   "scripts": [],
   "packs": [],
   "languages": [
