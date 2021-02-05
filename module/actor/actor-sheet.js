@@ -74,8 +74,8 @@ export class TvbActorSheet extends ActorSheet {
       }
       // Append to spells.
       else if (i.type === 'spell') {
-        if (i.data.spellLevel != undefined) {
-          spells[i.data.spellLevel].push(i);
+        if (i.data.__spellLevel != undefined) {
+          spells[i.data.__spellLevel].push(i);
         }
       }
     }

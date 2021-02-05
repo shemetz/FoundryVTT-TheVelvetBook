@@ -3,12 +3,12 @@
     "types": ["character"],
     "templates": {
       "base": {
-        "health": {
+        "__health": {
           "value": 10,
           "min": 0,
           "max": 10
         },
-        "power": {
+        "__power": {
           "value": 5,
           "min": 0,
           "max": 5
@@ -17,13 +17,13 @@
     },
     "character": {
       "templates": ["base"],
-      "biography": "",
+      "__biography": "",
       "attributes": {
-        "level": {
+        "__level": {
           "value": 1
         }
       },
-      "abilities": {
+      "__abilities": {
         "str": {
           "value": 10
         },
@@ -54,15 +54,15 @@
     },
     "item": {
       "templates": ["base"],
-      "quantity": 1,
-      "weight": 0
+      "__quantity": 1,
+      "__weight": 0
     },
     "feature": {
       "templates": ["base"]
     },
     "spell": {
       "templates": ["base"],
-      "spellLevel": 1
+      "__spellLevel": 1
     }
   }
 }
