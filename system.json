@@ -29,7 +29,7 @@
   "url": "https://github.com/itamarcu/FoundryVTT-TheVelvetBook",
   "manifest": "https://github.com/itamarcu/FoundryVTT-TheVelvetBook/raw/master/system.json",
   "download": "https://github.com/itamarcu/FoundryVTT-TheVelvetBook/archive/master.zip",
-  "readme": "https://raw.githubusercontent.com/itamarcu/FoundryVTT-TheVelvetBook/master/README.md",
+  "readme": "https://github.com/itamarcu/FoundryVTT-TheVelvetBook/blob/master/README.md",
   "bugs": "https://github.com/itamarcu/FoundryVTT-TheVelvetBook/issues",
   "license": "LICENSE.txt",
   "authors": [

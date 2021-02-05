@@ -1,6 +1,7 @@
 /**
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
+ * https://foundryvtt.com/api/Actor.html
  */
 export class TvbActor extends Actor {
 
