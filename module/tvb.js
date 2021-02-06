@@ -3,6 +3,7 @@ import { TvbActor } from "./actor/actor.js";
 import { TvbActorSheet } from "./actor/actor-sheet.js";
 import { TvbItem } from "./item/item.js";
 import { TvbItemSheet } from "./item/item-sheet.js";
+import { getArcana } from './utils.js'
 
 Hooks.once('init', async function() {
 
@@ -45,6 +46,10 @@ Hooks.once('init', async function() {
   Handlebars.registerHelper('toLowerCase', function(str) {
     return str.toLowerCase();
   });
+
+  Handlebars.registerHelper({
+    arcanaField: (name, field) => getArcana(name)[field] // e.g. "Fool" "arcanaAnimatedWithBorder"
+  })
 });
 
 Hooks.once("ready", async function() {

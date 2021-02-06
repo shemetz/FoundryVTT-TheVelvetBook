@@ -140,11 +140,32 @@
 }
 
 .tvb .sheet-header .profile-img {
+  -ms-flex-item-align: start;
+  align-self: flex-start;
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 180px;
-  flex: 0 0 180px;
-  height: 180px;
+  -ms-flex: 0 0 200px;
+  flex: 0 0 200px;
+  height: 200px;
   margin-right: 10px;
+}
+
+.tvb .sheet-header .arcana-static-img {
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 114px;
+  flex: 0 0 114px;
+  height: 200px;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.tvb .sheet-header .arcana-animated-img {
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  height: 200px;
+  margin-left: 10px;
+  margin-right: 0;
 }
 
 .tvb .sheet-header .header-fields {
@@ -155,8 +176,7 @@
 
 .tvb .sheet-header h1.charname {
   height: 50px;
-  padding: 0px;
-  margin: 5px 0;
+  padding: 0;
   border-bottom: 0;
 }
 

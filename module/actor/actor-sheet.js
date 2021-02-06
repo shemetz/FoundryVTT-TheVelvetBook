@@ -1,3 +1,5 @@
+import { CONSTANTS } from '../constants.js'
+
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -124,6 +126,9 @@ export class TvbActorSheet extends ActorSheet {
         li.addEventListener("dragstart", handler, false);
       });
     }
+
+    // Edit arcana
+    html.find('img[data-editarcana]').click(ev => this.onEditArcana(ev));
   }
 
   /**
@@ -173,4 +178,25 @@ export class TvbActorSheet extends ActorSheet {
     }
   }
 
+  onEditArcana(event) {
+    event.preventDefault()
+    const arcanaCardButtons = {}
+    Object.keys(CONSTANTS.ARCANA).forEach(name => {
+      arcanaCardButtons[name] = {
+        label: name,
+        callback: () => this.actor.update({'data.arcana': name}),
+      }
+    })
+    return new Dialog({
+      title: game.i18n.localize('TVB.CHOOSE_ARCANA'),
+      // TODO: content with image of each arcana
+      buttons: {
+        ...arcanaCardButtons,
+        cancel: {
+          icon: '<i class="fas fa-times"></i>',
+          label: 'CANCEL',
+        },
+      },
+    }).render(true)
+  }
 }

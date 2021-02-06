@@ -12,9 +12,25 @@
   margin-bottom: 10px;
 
   .profile-img {
-    flex: 0 0 180px;
-    height: 180px;
+    align-self: flex-start;
+    flex: 0 0 200px;
+    height: 200px;
     margin-right: 10px;
+  }
+
+  .arcana-static-img {
+    align-self: flex-start;
+    flex: 0 0 114px;
+    height: 200px;
+    margin-left: 10px;
+    margin-right: 0;
+  }
+
+  .arcana-animated-img {
+    align-self: flex-start;
+    height: 200px;
+    margin-left: 10px;
+    margin-right: 0;
   }
 
   .header-fields {
@@ -23,8 +39,7 @@
 
   h1.charname {
     height: 50px;
-    padding: 0px;
-    margin: 5px 0;
+    padding: 0;
     border-bottom: 0;
     input {
       width: 100%;
