@@ -121,8 +121,8 @@
 
 .tvb .sheet-header {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 210px;
-  flex: 0 0 210px;
+  -ms-flex: 0 0 220px;
+  flex: 0 0 220px;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -141,9 +141,9 @@
 
 .tvb .sheet-header .profile-img {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 100px;
-  flex: 0 0 100px;
-  height: 100px;
+  -ms-flex: 0 0 180px;
+  flex: 0 0 180px;
+  height: 180px;
   margin-right: 10px;
 }
 
