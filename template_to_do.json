@@ -2,7 +2,7 @@
   "Actor": {
     "types": ["character", "shadow", "npc"],
     "templates": {
-      "common": {
+      "base": {
         "favoriteThing": "",
         "arcana": ""
       },
@@ -53,7 +53,7 @@
       }
     },
     "character": {
-      "templates": ["common", "human", "persona"],
+      "templates": ["base", "human", "persona"],
       "details": {
         "fullName": "",
         "gender": "",
@@ -65,14 +65,18 @@
         "quote": "",
         "fullImage": ""
       },
-      "exp": 0
+      "attributes": {
+        "exp": 0
+      }
     },
     "shadow": {
-      "templates": ["common", "persona"],
-      "brains": 0
+      "templates": ["base", "persona"],
+      "attributes": {
+        "brains": 0
+      }
     },
     "npc": {
-      "templates": ["common", "human"]
+      "templates": ["base", "human"]
     }
   },
   "Item": {
