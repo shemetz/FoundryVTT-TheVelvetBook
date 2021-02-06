@@ -95,12 +95,33 @@
             </ol>
         </div>
 
-        {{!-- Human Biography Tab --}}
+        {{!-- Human Bio Tab --}}
         <div class="tab biography" data-group="primary" data-tab="bio">
-            {{editor content=data.__biography target="data.__biography" button=true owner=owner editable=editable}}
+            <div class="note-entries">
+                <article>
+                    <div class="section-titles">{{localize "TVB.BIO_PERSONALITY"}}</div>
+                    {{editor content=data.details.personality target="data.details.personality"
+                             button=true owner=owner editable=editable}}
+                </article>
+                <article>
+                    <div class="section-titles">{{localize "TVB.BIO_APPEARANCE"}}</div>
+                    {{editor content=data.details.appearance target="data.details.appearance"
+                             button=true owner=owner editable=editable}}
+                </article>
+                <article>
+                    <div class="section-titles">{{localize "TVB.BIO_GUARDIANS"}}</div>
+                    {{editor content=data.details.guardians target="data.details.guardians"
+                             button=true owner=owner editable=editable}}
+                </article>
+                <article>
+                    <div class="section-titles">{{localize "TVB.BIO_FAVORITE_THING"}}</div>
+                    {{editor content=data.details.favoriteThing target="data.details.favoriteThing"
+                             button=true owner=owner editable=editable}}
+                </article>
+            </div>
         </div>
 
-        {{!-- Owned Items Tab --}}
+        {{!-- Inventory Tab --}}
         <div class="tab items" data-group="primary" data-tab="inventory">
             <ol class="items-list">
                 <li class="item flexrow item-header">
@@ -127,7 +148,7 @@
 
     </section>
     <!-- SVG definitions, for the clipped shapes -->
-    <svg width="0" height="0">
+    <svg width="0" height="0" style="flex: 0">
         <defs>
             <clipPath id="barSectionChevron" clipPathUnits="objectBoundingBox">
                 <polygon points="0 0 .75 0 1 .5 .75 1 0 1 .25 .5"></polygon>

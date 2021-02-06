@@ -299,7 +299,7 @@
 }
 
 .tvb .tabs .item {
-  line-height: 40px;
+  line-height: 32px;
   font-weight: bold;
 }
 
@@ -346,4 +346,100 @@
   -ms-flex: 0 0 86px;
   flex: 0 0 86px;
   text-align: right;
+}
+
+.tvb .tab.biography .note-entries article {
+  background: var(--faintest-color);
+  border-radius: 5px;
+  padding: 8px;
+  position: relative;
+  min-height: 100px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.tvb .tab.biography .note-entries article:last-child {
+  margin-bottom: 0;
+}
+
+.tvb .tab.biography .note-entries article:hover .editor .editor-edit {
+  display: block;
+  padding: 0;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.tvb .tab.biography .note-entries article .section-titles {
+  font-weight: 700;
+  border-bottom: 1px solid var(--light-color);
+  padding-bottom: .25rem;
+}
+
+.tvb .tab.biography .note-entries article .section-titles input {
+  height: 16px;
+  width: calc(100% - 26px);
+  font-weight: 700;
+}
+
+.tvb .tab.biography .note-entries article .editor,
+.tvb .tab.biography .note-entries article .editor .editor-content {
+  min-height: 67px;
+  padding: 0;
+  position: static;
+}
+
+.tvb .tab.biography .note-entries article .editor .tox .tox-tbtn {
+  width: 24px;
+  height: 24px;
+}
+
+.tvb .tab.biography .note-entries article .editor .tox.tox-tinymce .tox-tbtn[title="Formats"] {
+  width: 90px;
+}
+
+.tvb .tab.biography .note-entries article .editor .tox .tox-tbtn--select {
+  width: auto;
+}
+
+.tvb .tab.biography .note-entries article .editor .editor-content ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.tvb .tab.biography .note-entries article .editor .editor-content,
+.tvb .tab.biography .note-entries article .editor .tox .tox-toolbar__group {
+  padding: 0;
+}
+
+.tvb .tab.biography .note-entries article.biography-notes .editor {
+  min-height: 271px;
+}
+
+.tvb .tab.biography .note-entries article.journal-notes .editor {
+  min-height: 382px;
+}
+
+.tvb .tab.biography .editor ul,
+.tvb .tab.biography .editor ol {
+  list-style: outside;
+  margin: 0.5em 0;
+  padding: 0 0 0 1.5em;
+}
+
+.tvb .tab.biography .editor {
+  min-height: 382px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: calc(100% - 21px);
+}
+
+.tvb .tab.biography .editor .editor-edit {
+  background: transparent;
 }

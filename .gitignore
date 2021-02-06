@@ -6,5 +6,7 @@
 node_modules/
 npm-debug.log
 
-# I have no idea how to prevent this directory from existing:
+# I have no idea how to prevent these directories from existing:
 css/global/
+css/components/
+css/utils/

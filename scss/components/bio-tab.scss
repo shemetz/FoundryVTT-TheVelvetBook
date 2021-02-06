@@ -1,0 +1,91 @@
+// shamelessly copied from the Tidy5e module
+
+.tab.biography {
+  .note-entries article {
+    background: var(--faintest-color);
+    border-radius: 5px;
+    padding: 8px;
+    position: relative;
+    min-height: 100px;
+    flex: 1;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover .editor .editor-edit {
+      display: block;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+    }
+
+    .section-titles {
+      font-weight: 700;
+      border-bottom: 1px solid var(--light-color);
+      padding-bottom: .25rem;
+
+      input {
+        height: 16px;
+        width: calc(100% - 26px);
+        font-weight: 700;
+      }
+    }
+
+    .editor,
+    .editor .editor-content {
+      min-height: 67px;
+      padding: 0;
+      position: static;
+    }
+
+    .editor .tox .tox-tbtn {
+      width: 24px;
+      height: 24px;
+    }
+
+    .editor .tox.tox-tinymce .tox-tbtn[title="Formats"] {
+      width: 90px;
+    }
+
+    .editor .tox .tox-tbtn--select {
+      width: auto;
+    }
+
+    .editor .editor-content ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .editor .editor-content,
+    .editor .tox .tox-toolbar__group {
+      padding: 0;
+    }
+
+    &.biography-notes .editor {
+      min-height: 271px;
+    }
+
+    &.journal-notes .editor {
+      min-height: 382px;
+    }
+  }
+
+  .editor ul,
+  .editor ol {
+    list-style: outside;
+    margin: 0.5em 0;
+    padding: 0 0 0 1.5em;
+  }
+
+  .editor {
+    min-height: 382px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 21px);
+
+    .editor-edit {
+      background: transparent;
+    }
+  }
+}
