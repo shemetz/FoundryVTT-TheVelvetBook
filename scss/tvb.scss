@@ -1,18 +1,18 @@
 // Import utilities.
-@import 'scss/utils/typography';
-@import 'scss/utils/colors';
-@import 'scss/utils/mixins';
-@import 'scss/utils/variables';
+@import 'utils/typography';
+@import 'utils/colors';
+@import 'utils/mixins';
+@import 'utils/variables';
 
 /* Global styles */
-@import 'scss/global/window';
-@import 'scss/global/grid';
-@import 'scss/global/flex';
+@import 'global/window';
+@import 'global/grid';
+@import 'global/flex';
 
 /* Styles limited to tvb sheets */
 .tvb {
-  @import 'scss/components/forms';
-  @import 'scss/components/resource';
-  @import 'scss/components/tabs';
-  @import 'scss/components/items';
+  @import 'components/forms';
+  @import 'components/resource';
+  @import 'components/tabs';
+  @import 'components/items';
 }
