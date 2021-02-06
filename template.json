@@ -1,24 +1,48 @@
 {
   "Actor": {
-    "types": ["character"],
+    "types": ["character", "shadow", "npc"],
     "templates": {
       "base": {
         "favoriteThing": "",
-        "arcana": "",
-        "__health": {
-          "value": 10,
-          "min": 0,
-          "max": 10
+        "arcana": ""
+      },
+      "human": {
+        "stats": {
+          "diligence": {
+            "value": 1,
+            "shock": 0,
+            "scars": 0
+          },
+          "guts": {
+            "value": 1,
+            "shock": 0,
+            "scars": 0
+          },
+          "proficiency": {
+            "value": 1,
+            "shock": 0,
+            "scars": 0
+          },
+          "knowledge": {
+            "value": 1,
+            "shock": 0,
+            "scars": 0
+          },
+          "expression": {
+            "value": 1,
+            "shock": 0,
+            "scars": 0
+          }
         },
-        "__power": {
-          "value": 5,
-          "min": 0,
-          "max": 5
+        "skills": {
+          "No Skill": 0
         }
+      },
+      "persona": {
       }
     },
     "character": {
-      "templates": ["base"],
+      "templates": ["base", "human", "persona"],
       "__biography": "",
       "attributes": {
         "__level": {
@@ -45,6 +69,12 @@
           "value": 10
         }
       }
+    },
+    "shadow": {
+      "templates": ["base", "persona"]
+    },
+    "npc": {
+      "templates": ["base", "human"]
     }
   },
   "Item": {

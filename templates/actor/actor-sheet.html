@@ -5,42 +5,18 @@
         <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="180" width="180"/>
         <div class="header-fields">
             <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
-            {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-            use both the "grid" and "grid-Ncol" class where "N" can be any number
-            from 1 to 12 and will create that number of columns. --}}
-            <div class="resources grid grid-2col">
-                {{!-- "flex-group-center" is also defined in the _grid.scss file
-                and it will add a small amount of padding, a border, and will
-                center all of its child elements content and text. --}}
-                <div class="resource flex-group-center">
-                    <label for="data.__health.value" class="resource-label">Health</label>
-                    <div class="resource-content flexrow flex-center flex-between">
-                        <input type="text" name="data.__health.value" value="{{data.__health.value}}"
-                               data-dtype="Number"/>
-                        <span> / </span>
-                        <input type="text" name="data.__health.max" value="{{data.__health.max}}" data-dtype="Number"/>
+            <div class="human-stats-container">
+                {{#each actor.statsForBars as |stat|}}
+                <div class="stat">
+                    <label class="stat-label">{{stat.readableName}}</label>
+                    <div class="stat-bar">
+                        <!-- there should be 5 bar sections, always.  the first will have the "first" class -->
+                        {{#each stat.sectionClassByIndex as |sectionClass idx|}}
+                        <div class="bar-section {{sectionClass}}"
+                             data-stat-name="{{stat.statName}}"
+                             data-section-class="{{sectionClass}}"></div>
+                        {{/each}}
                     </div>
-                </div>
-                <div class="resource flex-group-center">
-                    <label for="data.__power.value" class="resource-label">Power</label>
-                    <div class="resource-content flexrow flex-center flex-between">
-                        <input type="text" name="data.__power.value" value="{{data.__power.value}}"
-                               data-dtype="Number"/>
-                        <span> / </span>
-                        <input type="text" name="data.__power.max" value="{{data.__power.max}}" data-dtype="Number"/>
-                    </div>
-                </div>
-            </div>
-            {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-            use both the "grid" and "grid-Ncol" class where "N" can be any number
-            from 1 to 12 and will create that number of columns. --}}
-            <div class="__abilities grid grid-3col">
-                {{#each data.__abilities as |ability key|}}
-                <div class="ability flexrow flex-group-center">
-                    <label for="data.__abilities.{{key}}.value" class="resource-label">{{key}}</label>
-                    <input type="text" name="data.__abilities.{{key}}.value" value="{{ability.value}}"
-                           data-dtype="Number"/>
-                    <span class="ability-mod rollable" data-roll="d20+@__abilities.{{key}}.mod" data-label="{{key}}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
                 </div>
                 {{/each}}
             </div>
@@ -144,5 +120,16 @@
         </div>
 
     </section>
+    <!-- SVG definitions, for the clipped shapes -->
+    <svg width="0" height="0">
+        <defs>
+            <clipPath id="barSectionChevron" clipPathUnits="objectBoundingBox">
+                <polygon points="0 0 .75 0 1 .5 .75 1 0 1 .25 .5"></polygon>
+            </clipPath>
+            <clipPath id="barSectionChevronFirst" clipPathUnits="objectBoundingBox">
+                <polygon points="0 0 .75 0 1 .5 .75 1 0 1"></polygon>
+            </clipPath>
+        </defs>
+    </svg>
 </form>
 

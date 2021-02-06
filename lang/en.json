@@ -1,3 +1,10 @@
 {
+  "   Stats   ": "---",
+  "TVB.STAT_DILIGENCE": "Diligence",
+  "TVB.STAT_GUTS": "Guts",
+  "TVB.STAT_PROFICIENCY": "Proficiency",
+  "TVB.STAT_KNOWLEDGE": "Knowledge",
+  "TVB.STAT_EXPRESSION": "Expression",
+  "   Dialog Windows   ": "---",
   "TVB.CHOOSE_ARCANA": "Choose an Arcana"
 }
