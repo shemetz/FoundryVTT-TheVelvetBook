@@ -5,6 +5,16 @@
   "TVB.STAT_PROFICIENCY": "Proficiency",
   "TVB.STAT_KNOWLEDGE": "Knowledge",
   "TVB.STAT_EXPRESSION": "Expression",
+  "   Bio   ": "---",
+  "TVB.BIO_FULL_NAME": "Full Name",
+  "TVB.BIO_GENDER": "Gender",
+  "TVB.BIO_DATE_OF_BIRTH": "Date of Birth",
+  "TVB.BIO_SCHOOL_GRADE": "School Grade",
+  "TVB.BIO_PERSONALITY": "Personality",
+  "TVB.BIO_APPEARANCE": "Appearance",
+  "TVB.BIO_GUARDIANS": "Guardians",
+  "TVB.BIO_FAVORITE_THING": "Favorite Thing",
+  "TVB.BIO_QUOTE": "Quote",
   "   Dialog Windows   ": "---",
   "TVB.CHOOSE_ARCANA": "Choose an Arcana"
 }

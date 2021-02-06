@@ -3,10 +3,21 @@
     "types": ["character", "shadow", "npc"],
     "templates": {
       "base": {
-        "favoriteThing": "",
         "arcana": ""
       },
       "human": {
+        "details": {
+          "fullName": "",
+          "gender": "",
+          "dateOfBirth": "",
+          "schoolGrade": "",
+          "personality": "",
+          "appearance": "",
+          "guardians": "",
+          "favoriteThing": "",
+          "quote": "",
+          "fullImage": ""
+        },
         "stats": {
           "diligence": {
             "value": 1,

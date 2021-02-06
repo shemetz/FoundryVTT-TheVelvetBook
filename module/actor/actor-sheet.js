@@ -13,7 +13,7 @@ export class TvbActorSheet extends ActorSheet {
       template: 'systems/tvb/templates/actor/actor-sheet.html',
       width: 600,
       height: 600,
-      tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'description' }],
+      tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'skills' }],
     })
   }
 
@@ -28,7 +28,7 @@ export class TvbActorSheet extends ActorSheet {
     }
 
     // Prepare items.
-    if (this.actor.data.type == 'character') {
+    if (this.actor.data.type === 'character') {
       this._prepareCharacterItems(data)
     }
 
@@ -37,10 +37,6 @@ export class TvbActorSheet extends ActorSheet {
 
   /**
    * Organize and classify Items for Character sheets.
-   *
-   * @param {Object} actorData The actor to prepare.
-   *
-   * @return {undefined}
    */
   _prepareCharacterItems (sheetData) {
     const actorData = sheetData.actor
