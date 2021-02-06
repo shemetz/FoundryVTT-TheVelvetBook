@@ -348,6 +348,34 @@
   text-align: right;
 }
 
+.tvb .tab.biography .minor-details {
+  margin: 12px;
+  outline: double;
+}
+
+.tvb .tab.biography .minor-details span.minor-detail-label {
+  margin-left: 4px;
+  font-weight: bold;
+}
+
+.tvb .tab.biography span.minor-detail {
+  position: relative;
+  margin: 6px;
+  padding: 0 4px;
+  display: inline-block;
+  border-radius: 3px;
+  min-width: 50px;
+  font-family: cursive;
+}
+
+.tvb .tab.biography span.minor-detail.quote {
+  display: block;
+  font-style: italic;
+  text-align: center;
+  margin: 5px;
+  font-family: cursive;
+}
+
 .tvb .tab.biography .note-entries article {
   background: var(--faintest-color);
   border-radius: 5px;
@@ -442,4 +470,17 @@
 
 .tvb .tab.biography .editor .editor-edit {
   background: transparent;
+}
+
+.tvb .tab.biography .end-of-bio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.tvb .tab.biography .end-of-bio .full-img-in-bio {
+  height: 540px;
 }

@@ -88,7 +88,7 @@ export class TvbActorSheet extends ActorSheet {
         .concat(new Array(5 - stat.value).fill('stat-no'))
       sectionClassByIndex[0] = sectionClassByIndex[0] + ' first'
       return {
-        readableName: game.i18n.localize(`TVB.STAT_${statName.toUpperCase()}`),
+        readableName: game.i18n.localize(`TVB.Stat_${statName}`),
         statName,
         sectionClassByIndex,
         isFirst: idx === 0,
@@ -147,6 +147,18 @@ export class TvbActorSheet extends ActorSheet {
     // Edit stats (each individual stat bar section is clickable)
     html.find('div.bar-section').click(ev => this.onClickBarSection(ev, true))
     html.find('div.bar-section').bind('contextmenu', ev => this.onClickBarSection(ev, false))
+
+    // set input fields via editable elements (copied from Tidy5e)
+    html.find('[contenteditable]').on('keypress', function (e) {
+      if (e.keyCode === 13) {
+        $(this).blur()
+      }
+    })
+    html.find('[contenteditable]').blur(async (event) => {
+      let value = event.target.textContent
+      let target = event.target.dataset.target
+      html.find('input[type="hidden"][data-input="' + target + '"]').val(value).submit()
+    })
   }
 
   /**
@@ -206,7 +218,7 @@ export class TvbActorSheet extends ActorSheet {
       }
     })
     return new Dialog({
-      title: game.i18n.localize('TVB.CHOOSE_ARCANA'),
+      title: game.i18n.localize('TVB.ChooseAnArcana'),
       // TODO: content with image of each arcana
       buttons: {
         ...arcanaCardButtons,

@@ -97,27 +97,59 @@
 
         {{!-- Human Bio Tab --}}
         <div class="tab biography" data-group="primary" data-tab="bio">
+            <div class="minor-details">
+                <div>
+                    <span class="minor-detail-label">{{localize "TVB.FullName"}}:</span>
+                    <span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" class="minor-detail"
+                          data-target="{{actor._id}}-data.details.fullName">{{data.details.fullName}}</span>
+                    <input type="hidden" data-input="{{actor._id}}-data.details.fullName"
+                           name="data.details.fullName" value="{{data.details.fullName}}">
+                </div>
+                <span class="minor-detail-label">{{localize "TVB.Gender"}}:</span>
+                <span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" class="minor-detail"
+                      data-target="{{actor._id}}-data.details.gender">{{data.details.gender}}</span>
+                <input type="hidden" data-input="{{actor._id}}-data.details.gender"
+                       name="data.details.gender" value="{{data.details.gender}}">
+                <span class="minor-detail-label">{{localize "TVB.DateOfBirth"}}:</span>
+                <span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" class="minor-detail"
+                      data-target="{{actor._id}}-data.details.dateOfBirth">{{data.details.dateOfBirth}}</span>
+                <input type="hidden" data-input="{{actor._id}}-data.details.dateOfBirth"
+                       name="data.details.dateOfBirth" value="{{data.details.dateOfBirth}}">
+                <span class="minor-detail-label">{{localize "TVB.Grade"}}:</span>
+                <span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" class="minor-detail"
+                      data-target="{{actor._id}}-data.details.grade">{{data.details.grade}}</span>
+                <input type="hidden" data-input="{{actor._id}}-data.details.grade"
+                       name="data.details.grade" value="{{data.details.grade}}">
+            </div>
             <div class="note-entries">
                 <article>
-                    <div class="section-titles">{{localize "TVB.BIO_PERSONALITY"}}</div>
+                    <div class="section-titles">{{localize "TVB.Personality"}}</div>
                     {{editor content=data.details.personality target="data.details.personality"
                              button=true owner=owner editable=editable}}
                 </article>
                 <article>
-                    <div class="section-titles">{{localize "TVB.BIO_APPEARANCE"}}</div>
+                    <div class="section-titles">{{localize "TVB.Appearance"}}</div>
                     {{editor content=data.details.appearance target="data.details.appearance"
                              button=true owner=owner editable=editable}}
                 </article>
                 <article>
-                    <div class="section-titles">{{localize "TVB.BIO_GUARDIANS"}}</div>
+                    <div class="section-titles">{{localize "TVB.Guardians"}}</div>
                     {{editor content=data.details.guardians target="data.details.guardians"
                              button=true owner=owner editable=editable}}
                 </article>
                 <article>
-                    <div class="section-titles">{{localize "TVB.BIO_FAVORITE_THING"}}</div>
+                    <div class="section-titles">{{localize "TVB.FavoriteThing"}}</div>
                     {{editor content=data.details.favoriteThing target="data.details.favoriteThing"
                              button=true owner=owner editable=editable}}
                 </article>
+            </div>
+            <span {{#if owner}}contenteditable="true"{{/if}} spellcheck="false" class="minor-detail quote"
+                  data-target="{{actor._id}}-data.details.quote">{{data.details.quote}}</span>
+            <input type="hidden" data-input="{{actor._id}}-data.details.quote"
+                   name="data.details.quote" value="{{data.details.quote}}">
+            <div class="end-of-bio">
+                <img class="full-img-in-bio" src="{{data.details.fullImage}}"
+                     data-edit="data.details.fullImage" alt="full image"/>
             </div>
         </div>
 
