@@ -1,5 +1,5 @@
 .item-form {
-  font-family: $font-primary;
+  font-family: "Roboto", sans-serif;
 }
 
 .sheet-header {
@@ -28,6 +28,7 @@
 
   .arcana-animated-img {
     align-self: flex-start;
+    flex: 0 0 118px;
     height: 200px;
     margin-left: 10px;
     margin-right: 0;
@@ -62,7 +63,7 @@
 
 .tox {
   .tox-editor-container {
-    background: $c-white;
+    background: #fff;
   }
 
   .tox-edit-area {

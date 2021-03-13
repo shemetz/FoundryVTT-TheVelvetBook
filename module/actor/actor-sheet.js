@@ -159,6 +159,10 @@ export class TvbActorSheet extends ActorSheet {
       let target = event.target.dataset.target
       html.find('input[type="hidden"][data-input="' + target + '"]').val(value).submit()
     })
+
+    // Add/edit/delete skills
+    html.find('.skill-create').click(this._onSkillCreate.bind(this))
+    html.find('.skill-edit').click(this._onSkillEdit.bind(this))
   }
 
   /**
@@ -186,6 +190,74 @@ export class TvbActorSheet extends ActorSheet {
 
     // Finally, create the item!
     return this.actor.createOwnedItem(itemData)
+  }
+
+  _onSkillCreate (event) {
+    event.preventDefault()
+    const data = this.actor.data.data
+    const skills = data.skills
+    const skill = {
+      name: game.i18n.localize('TVB.DefaultSkillName'),
+      rank: 0,
+      description: game.i18n.localize('TVB.DefaultSkillDescription'),
+    }
+    const skillsUpdated = duplicate(skills)
+    if (skills.length >= 1 && skills[skills.length - 1].name === skill.name) {
+      console.log(`TVB | Not adding a new skill because a new one is already ready to edit`)
+    } else {
+      skillsUpdated.push(skill)
+    }
+    this.actor.update({ 'data.skills': skillsUpdated }).then(() => {
+      this.editSkill(skill.name)
+    })
+  }
+
+  _onSkillEdit (event) {
+    event.preventDefault()
+    const skillName = event.currentTarget.dataset.skill
+    this.editSkill(skillName)
+  }
+
+  async editSkill (skillName) {
+    const data = this.actor.data.data
+    const skillsUpdated = duplicate(data.skills)
+    const skillIdx = skillsUpdated.findIndex(s => s.name === skillName)
+    const skill = skillsUpdated[skillIdx]
+
+    // Render the skill editing template
+    const html = await renderTemplate('systems/tvb/templates/actor/edit-skill.html', {
+      skill: skill,
+    })
+
+    return new Dialog({
+      title: game.i18n.localize('TVB.EditSkill'),
+      content: html,
+      buttons: {
+        submit: {
+          callback: $html => {
+            skill.name = $html.find('[name=name]')[0].value
+            skill.rank = $html.find('[name=rank]')[0].value
+            skill.description = $html.find('[name=description]')[0].value
+            console.log('new skill would be ', skill)
+            this.actor.update({ 'data.skills': skillsUpdated })
+          },
+          icon: '<i class="fas fa-plus"></i>',
+          label: game.i18n.localize('TVB.UpdateSkill'),
+        },
+        delete: {
+          callback: () => {
+            delete skillsUpdated[skillIdx]
+            this.actor.update({ 'data.skills': skillsUpdated })
+          },
+          icon: '<i class="fas fa-trash"></i>',
+          label: game.i18n.localize('TVB.DeleteSkill'),
+        },
+        cancel: {
+          icon: '<i class="fas fa-times"></i>',
+          label: game.i18n.localize('TVB.Cancel'),
+        },
+      },
+    }).render(true)
   }
 
   /**

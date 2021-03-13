@@ -45,9 +45,9 @@
             "scars": 0
           }
         },
-        "skills": {
-          "No Skill": 0
-        }
+        "skills": [
+          {"name": "New Skill", "rank": 0, "description": "Replace this with any of your skills."}
+        ]
       },
       "persona": {
       }

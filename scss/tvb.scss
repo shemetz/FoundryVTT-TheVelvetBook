@@ -1,6 +1,5 @@
 // Import utilities.
 @import 'utils/typography';
-@import 'utils/colors';
 @import 'utils/mixins';
 @import 'utils/variables';
 
@@ -15,5 +14,6 @@
   @import 'components/resource';
   @import 'components/tabs';
   @import 'components/items';
+  @import 'components/skills';
   @import 'components/bio-tab';
 }

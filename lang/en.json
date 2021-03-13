@@ -16,5 +16,16 @@
   "TVB.Guardians": "Guardians",
   "TVB.FavoriteThing": "Favorite Thing",
   "   Dialog Windows   ": "---",
-  "TVB.ChooseAnArcana": "Choose an Arcana"
+  "TVB.ChooseAnArcana": "Choose an Arcana",
+  "TVB.Submit": "Submit",
+  "TVB.Cancel": "Cancel",
+  "   Skills   ": "---",
+  "TVB.EditSkill": "Edit Skill",
+  "TVB.UpdateSkill": "Update Skill",
+  "TVB.DeleteSkill": "Delete Skill",
+  "TVB.SkillName": "Skill Name",
+  "TVB.Rank": "Rank",
+  "TVB.Description": "Description",
+  "TVB.DefaultSkillName": "New Skill",
+  "TVB.DefaultSkillDescription": "Insert skill description here."
 }
