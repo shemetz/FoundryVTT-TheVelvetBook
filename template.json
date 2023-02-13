@@ -46,7 +46,7 @@
           }
         },
         "skills": [
-          {"name": "New Skill", "rank": 0, "description": "Replace this with any of your skills."}
+          {"name": "New Skill", "rank": 0, "stat": "guts", "description": "Replace this with any of your skills."}
         ]
       },
       "persona": {

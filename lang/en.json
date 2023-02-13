@@ -25,7 +25,9 @@
   "TVB.DeleteSkill": "Delete Skill",
   "TVB.SkillName": "Skill Name",
   "TVB.Rank": "Rank",
+  "TVB.DefaultStat": "Default Stat",
   "TVB.Description": "Description",
   "TVB.DefaultSkillName": "New Skill",
-  "TVB.DefaultSkillDescription": "Insert skill description here."
+  "TVB.DefaultSkillDescription": "Insert skill description here.",
+  "TVB.CustomSkill": "Custom..."
 }

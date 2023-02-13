@@ -3,7 +3,7 @@ import { TvbActor } from "./actor/actor.js";
 import { TvbActorSheet } from "./actor/actor-sheet.js";
 import { TvbItem } from "./item/item.js";
 import { TvbItemSheet } from "./item/item-sheet.js";
-import { getArcana } from './utils.js'
+import { getArcana } from './utilities/utils.js'
 
 Hooks.once('init', async function() {
 

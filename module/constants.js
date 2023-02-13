@@ -1,4 +1,6 @@
-const ARCANA = {
+const constants = {}
+
+constants.ARCANA = {
   'Fool': {
     index: 0,
     staticImage: 'https://i.imgur.com/8SOjbGh.png',
@@ -155,7 +157,7 @@ const ARCANA = {
   },
 }
 
-const ARCANA_MISSING = {
+constants.ARCANA_MISSING = {
   index: 999,
   staticImage: 'https://i.imgur.com/Rkz0Rie.png',
   animatedImageWithBorder: 'https://i.imgur.com/Rkz0Rie.png',
@@ -163,7 +165,33 @@ const ARCANA_MISSING = {
   extra: 'None',
 }
 
-export const CONSTANTS = {
-  ARCANA,
-  ARCANA_MISSING,
+constants.STATS = {
+  'diligence': 'Diligence',
+  'guts': 'Guts',
+  'proficiency': 'Proficiency',
+  'knowledge': 'Knowledge',
+  'expression': 'Expression',
 }
+
+/**
+ * Default skills and mappings to default stats
+ */
+constants.DEFAULT_SKILLS = {
+  'Beat-Down': 'diligence',
+  'Block': 'diligence',
+  'P.E.': 'diligence',
+  'Courage': 'guts',
+  'Fighting': 'guts',
+  'Wind': 'guts',
+  'Aim': 'proficiency',
+  'Reflex': 'proficiency',
+  'Shop': 'proficiency',
+  'Academics': 'knowledge',
+  'Notice': 'knowledge',
+  'Out-Think': 'knowledge',
+  'Charm': 'expression',
+  'Connive': 'expression',
+  'Put-Down': 'expression',
+}
+
+export default constants

@@ -1,4 +1,5 @@
-import { CONSTANTS } from '../constants.js'
+import constants from '../constants.js'
+import { openSkillEditDialog } from './skill-edit-dialog.js'
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -199,6 +200,7 @@ export class TvbActorSheet extends ActorSheet {
     const skill = {
       name: game.i18n.localize('TVB.DefaultSkillName'),
       rank: 0,
+      stat: 'knowledge',
       description: game.i18n.localize('TVB.DefaultSkillDescription'),
     }
     const skillsUpdated = duplicate(skills)
@@ -208,56 +210,14 @@ export class TvbActorSheet extends ActorSheet {
       skillsUpdated.push(skill)
     }
     this.actor.update({ 'data.skills': skillsUpdated }).then(() => {
-      this.editSkill(skill.name)
+      openSkillEditDialog(this.actor, skill.name)
     })
   }
 
   _onSkillEdit (event) {
     event.preventDefault()
     const skillName = event.currentTarget.dataset.skill
-    this.editSkill(skillName)
-  }
-
-  async editSkill (skillName) {
-    const data = this.actor.data.data
-    const skillsUpdated = duplicate(data.skills)
-    const skillIdx = skillsUpdated.findIndex(s => s.name === skillName)
-    const skill = skillsUpdated[skillIdx]
-
-    // Render the skill editing template
-    const html = await renderTemplate('systems/tvb/templates/actor/edit-skill.html', {
-      skill: skill,
-    })
-
-    return new Dialog({
-      title: game.i18n.localize('TVB.EditSkill'),
-      content: html,
-      buttons: {
-        submit: {
-          callback: $html => {
-            skill.name = $html.find('[name=name]')[0].value
-            skill.rank = $html.find('[name=rank]')[0].value
-            skill.description = $html.find('[name=description]')[0].value
-            console.log('new skill would be ', skill)
-            this.actor.update({ 'data.skills': skillsUpdated })
-          },
-          icon: '<i class="fas fa-plus"></i>',
-          label: game.i18n.localize('TVB.UpdateSkill'),
-        },
-        delete: {
-          callback: () => {
-            delete skillsUpdated[skillIdx]
-            this.actor.update({ 'data.skills': skillsUpdated })
-          },
-          icon: '<i class="fas fa-trash"></i>',
-          label: game.i18n.localize('TVB.DeleteSkill'),
-        },
-        cancel: {
-          icon: '<i class="fas fa-times"></i>',
-          label: game.i18n.localize('TVB.Cancel'),
-        },
-      },
-    }).render(true)
+    openSkillEditDialog(this.actor, skillName)
   }
 
   /**
@@ -283,7 +243,7 @@ export class TvbActorSheet extends ActorSheet {
   onEditArcana (event) {
     event.preventDefault()
     const arcanaCardButtons = {}
-    Object.keys(CONSTANTS.ARCANA).forEach(name => {
+    Object.keys(constants.ARCANA).forEach(name => {
       arcanaCardButtons[name] = {
         label: name,
         callback: () => this.actor.update({ 'data.arcana': name }),
